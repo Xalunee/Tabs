@@ -1,53 +1,107 @@
+/* BEGIN (write your solution here) */
+@font-face {
+  font-weight: 400;
+  font-family: "Raleway";
+  src: url("../assets/fonts/Raleway-Regular.ttf");
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "Raleway";
+  src: url("../assets/fonts/Raleway-Bold.ttf");
+}
+/* END */
+
 body {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+  padding: 50px;
+
+  color: #eee;
 
   /* BEGIN (write your solution here) */
-  color: #333;
-  font-size: 18px;
+  font: 20px/1.5 "Raleway", sans-serif;
   /* END */
-  font-family: sans-serif;
-  line-height: 1.5;
+
+  background-image: linear-gradient(to right top, #222831, #282d36, #2d333b, #333841, #393e46);
 }
 
-/* BEGIN (write your solution here) */
+img {
+  max-width: 100%;
+
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+}
+
 h1 {
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-size: 60px;
-  text-align: center;
+  font-size: 2em;
 }
-
-/* END */
 
 h2 {
-  /* BEGIN (write your solution here) */
-  margin-top: 0px;
-  padding-bottom: 30px;
-  font-size: 25px;
-  text-align: center;
-  /* END */
-
-  border-bottom: 2px solid #e3e3e3;
+  color: #00adb5;
+  font-size: 1.5em;
 }
 
-main {
-  width: 900px;
-  margin: auto;
+.tabs {
+  width: 1024px;
+  margin: 0 auto;
+
+  /* BEGIN (write your solution here) */
+  columns: 3;
+  column-gap: 0;
+  /* END */
 }
 
 /* BEGIN (write your solution here) */
-section {
-  margin: 50px 0px;
-  padding: 0px 50px;
+.tab-name {
+  display: block;
+  padding: 20px;
+
+  break-inside: avoid;
+
+  text-align: center;
+  text-decoration: none;
+  
+  background-color: #00adb5;
 }
 
-section h2 {
-  padding: 0px;
-  border: none;
-  text-align: left;
+.tab-name:hover,
+.tab-name:focus {
+  border-bottom: 3px solid #5ffbf1;
 }
 
-section ul li {
-  margin-bottom: 10px;
+.tabs-content {
+  column-span: all;
+
+  background-color: #393e46;
+}
+
+.tabs-content-item {
+  padding: 20px;
+
+  columns: 3;
+  column-gap: 30px;
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+[data-tab="html"]:hover ~ .tabs-content [data-tab-content="html"],
+[data-tab="html"]:focus ~ .tabs-content [data-tab-content="html"],
+[data-tab="css"]:hover ~ .tabs-content [data-tab-content="css"],
+[data-tab="css"]:focus ~ .tabs-content [data-tab-content="css"],
+[data-tab="js"]:hover ~ .tabs-content [data-tab-content="js"],
+[data-tab="js"]:focus ~ .tabs-content [data-tab-content="js"] {
+  display: block;
 }
 /* END */
+
+.span-all {
+  column-span: all;
+}
